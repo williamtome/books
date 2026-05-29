@@ -36,7 +36,19 @@
         </div>
         <div class="my-2">
             <label for="AnoPublicacao" class="form-label">Ano de Publicação</label>
-            <input type="text" name="AnoPublicacao" class="form-control {{ $errors->has('AnoPublicacao') ? 'is-invalid' : 'is-valid' }}" maxlength="4" id="AnoPublicacao" value="{{ old('AnoPublicacao') }}"/>
+            <input
+                type="text"
+                id="AnoPublicacao"
+                name="AnoPublicacao"
+                minlength="4"
+                maxlength="4"
+                pattern="[0-9]{4}"
+                class="form-control {{ $errors->has('AnoPublicacao') ? 'is-invalid' : 'is-valid' }}"
+                value="{{ old('AnoPublicacao') }}"
+                placeholder="Ex: {{ date('Y') }}"
+                inputmode="numeric"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+            />
             @if($errors->has('AnoPublicacao'))
                 <div class="invalid-feedback">
                     <p>{{ $errors->get('AnoPublicacao')[0] }}</p>
