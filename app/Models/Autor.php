@@ -19,7 +19,9 @@ class Autor extends Model
             Livro::class,
             'livro_autor',
             'Autor_CodAu',
-            'Livro_CodL'
+            'Livro_CodL',
+            'CodAu',
+            'CodL'
         );
     }
 }

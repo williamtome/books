@@ -19,7 +19,9 @@ class Assunto extends Model
             Livro::class,
             'livro_assunto',
             'Assunto_CodAs',
-            'Livro_CodL'
+            'Livro_CodL',
+            'CodAs',
+            'CodL'
         );
     }
 }
