@@ -15,7 +15,7 @@ class LivroRequestTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->requisicao = new LivroRequest();
+        $this->requisicao = new LivroRequest;
         parent::setUp();
     }
 

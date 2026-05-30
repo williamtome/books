@@ -117,7 +117,7 @@ class AutorControllerTest extends TestCase
     public function test_cadastro_falha_quando_nome_possui_mais_de_40_caracteres(): void
     {
         $resposta = $this->post(route('autores.cadastrar'), $this->dadosValidos([
-            'Nome' => str_repeat('A',41),
+            'Nome' => str_repeat('A', 41),
         ]));
 
         $resposta->assertSessionHasErrors('Nome');

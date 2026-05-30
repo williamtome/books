@@ -3,7 +3,6 @@
 namespace Tests\Unit\Requests;
 
 use App\Http\Requests\AutorRequest;
-use App\Http\Requests\LivroRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Validator;
 use Tests\TestCase;
@@ -16,7 +15,7 @@ class AutorRequestTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->requisicao = new AutorRequest();
+        $this->requisicao = new AutorRequest;
         parent::setUp();
     }
 
