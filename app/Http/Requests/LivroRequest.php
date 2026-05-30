@@ -7,9 +7,17 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class LivroRequest extends FormRequest
 {
+    protected string $anoAtual;
+
     public function authorize(): bool
     {
         return true;
+    }
+
+    public function getAnoAtual()
+    {
+        $this->anoAtual = date('Y');
+        return $this->anoAtual;
     }
 
     /**
@@ -23,7 +31,7 @@ class LivroRequest extends FormRequest
             'Titulo' => ['required', 'string', 'max:40'],
             'Editora' => ['required', 'string', 'max:40'],
             'Edicao' => ['required', 'numeric', 'min:1'],
-            'AnoPublicacao' => ['required', 'numeric', 'digits:4', 'max:' . date('Y')],
+            'AnoPublicacao' => ['required', 'numeric', 'digits:4', 'min:1000', 'max:' . $this->getAnoAtual()],
         ];
     }
 
