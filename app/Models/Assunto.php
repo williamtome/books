@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Assunto extends Model
 {
     protected $table = 'assuntos';
+
     protected $primaryKey = 'CodAs';
+
     public $timestamps = false;
+
     protected $fillable = [
         'Descricao',
     ];
@@ -19,7 +22,9 @@ class Assunto extends Model
             Livro::class,
             'livro_assunto',
             'Assunto_CodAs',
-            'Livro_CodL'
+            'Livro_CodL',
+            'CodAs',
+            'CodL'
         );
     }
 }

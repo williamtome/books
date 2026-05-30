@@ -26,6 +26,6 @@ class AutorTest extends TestCase
     public function test_retorna_os_tipos_de_dados_das_colunas_da_tabela_autores(): void
     {
         $this->assertEquals('int', Schema::getColumnType('autores', 'CodAu'));
-        $this->assertEquals('varchar',  Schema::getColumnType('autores', 'Nome'));
+        $this->assertEquals('varchar', Schema::getColumnType('autores', 'Nome'));
     }
 }

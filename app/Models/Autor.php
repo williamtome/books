@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Autor extends Model
 {
     protected $table = 'autores';
+
     protected $primaryKey = 'CodAu';
+
     public $timestamps = false;
+
     protected $fillable = [
         'Nome',
     ];
@@ -19,7 +22,9 @@ class Autor extends Model
             Livro::class,
             'livro_autor',
             'Autor_CodAu',
-            'Livro_CodL'
+            'Livro_CodL',
+            'CodAu',
+            'CodL'
         );
     }
 }

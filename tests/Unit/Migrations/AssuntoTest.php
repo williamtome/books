@@ -26,6 +26,6 @@ class AssuntoTest extends TestCase
     public function test_retorna_os_tipos_de_dados_das_colunas_da_tabela_assuntos(): void
     {
         $this->assertEquals('int', Schema::getColumnType('assuntos', 'CodAs'));
-        $this->assertEquals('varchar',  Schema::getColumnType('assuntos', 'Descricao'));
+        $this->assertEquals('varchar', Schema::getColumnType('assuntos', 'Descricao'));
     }
 }
