@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutorController;
 use App\Http\Controllers\LivroController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,4 +13,13 @@ Route::controller(LivroController::class)->prefix('livros')->group(function () {
     Route::get('/editar/{id}', 'edit')->name('livros.editar');
     Route::put('/atualizar/{id}', 'update')->name('livros.atualizar');
     Route::delete('/excluir/{id}', 'destroy')->name('livros.excluir');
+});
+
+Route::controller(AutorController::class)->prefix('autores')->group(function () {
+    Route::get('/', 'index')->name('autores.index');
+    Route::get('/cadastro', 'create')->name('autores.cadastro');
+    Route::post('/cadastrar', 'store')->name('autores.cadastrar');
+    Route::get('/editar/{id}', 'edit')->name('autores.editar');
+    Route::put('/atualizar/{id}', 'update')->name('autores.atualizar');
+    Route::delete('/excluir/{id}', 'destroy')->name('autores.excluir');
 });
