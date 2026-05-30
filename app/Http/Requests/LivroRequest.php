@@ -46,10 +46,11 @@ class LivroRequest extends FormRequest
             'Editora.max' => 'O campo editora suporta até 40 caracteres.',
             'Edicao.required' => 'O campo edição é obrigatório.',
             'Edicao.numeric' => 'O campo edição aceita somente números.',
-            'Edicao.min' => 'O campo edição números acima de 1 (um).',
+            'Edicao.min' => 'O campo edição deve ser maior ou igual a 1 (um).',
             'AnoPublicacao.required' => 'O campo ano de publicação é obrigatório.',
             'AnoPublicacao.numeric' => 'O campo ano de publicação aceita somente números.',
-            'AnoPublicacao.max' => 'O campo ano de publicação suporta até 4 caracteres.',
+            'AnoPublicacao.max' => 'O campo ano de publicação não pode ser maior que '. $this->getAnoAtual() .'.',
+            'AnoPublicacao.min'   => 'O campo ano de publicação deve ser maior que 1000.',
             'AnoPublicacao.digits'   => 'O campo ano de publicação deve ter exatamente 4 dígitos.',
         ];
     }
