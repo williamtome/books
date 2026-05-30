@@ -11,6 +11,14 @@ class LivroRequestTest extends TestCase
 {
     use RefreshDatabase;
 
+    private LivroRequest $requisicao;
+
+    protected function setUp(): void
+    {
+        $this->requisicao = new LivroRequest;
+        parent::setUp();
+    }
+
     private function dadosValidos(array $sobrescrever = []): array
     {
         return array_merge([
@@ -23,16 +31,12 @@ class LivroRequestTest extends TestCase
 
     private function validar(array $dados): \Illuminate\Validation\Validator
     {
-        $requisicao = new LivroRequest;
-
-        return Validator::make($dados, $requisicao->rules(), $requisicao->messages());
+        return Validator::make($dados, $this->requisicao->rules(), $this->requisicao->messages());
     }
 
     public function test_requisicao_esta_autorizada(): void
     {
-        $requisicao = new LivroRequest;
-
-        $this->assertTrue($requisicao->authorize());
+        $this->assertTrue($this->requisicao->authorize());
     }
 
     // Testes do campo título
