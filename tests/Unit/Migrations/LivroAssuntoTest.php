@@ -35,8 +35,8 @@ class LivroAssuntoTest extends TestCase
         $this->expectException(QueryException::class);
 
         \DB::table('livro_assunto')->insert([
-            'Livro_CodL'   => 9999, // não existe
-            'Assunto_CodAs'  => 9999,
+            'Livro_CodL' => 9999, // não existe
+            'Assunto_CodAs' => 9999,
         ]);
     }
 }

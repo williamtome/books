@@ -3,7 +3,7 @@
 use App\Http\Controllers\LivroController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('welcome'));
+Route::get('/', fn () => view('welcome'));
 
 Route::controller(LivroController::class)->prefix('livros')->group(function () {
     Route::get('/', 'index')->name('livros.index');

@@ -14,9 +14,9 @@ class LivroControllerTest extends TestCase
     private function dadosValidos(array $sobrescrever = []): array
     {
         return array_merge([
-            'Titulo'        => 'Código Limpo',
-            'Editora'       => 'Alta Books',
-            'Edicao'        => 1,
+            'Titulo' => 'Código Limpo',
+            'Editora' => 'Alta Books',
+            'Edicao' => 1,
             'AnoPublicacao' => '2009',
         ], $sobrescrever);
     }
@@ -89,9 +89,9 @@ class LivroControllerTest extends TestCase
         $this->post(route('livros.cadastrar'), $this->dadosValidos());
 
         $this->assertDatabaseHas('livros', [
-            'Titulo'        => 'Código Limpo',
-            'Editora'       => 'Alta Books',
-            'Edicao'        => 1,
+            'Titulo' => 'Código Limpo',
+            'Editora' => 'Alta Books',
+            'Edicao' => 1,
             'AnoPublicacao' => '2009',
         ]);
     }
@@ -203,12 +203,12 @@ class LivroControllerTest extends TestCase
         $livro = $this->criarLivro();
 
         $this->put(route('livros.atualizar', $livro->CodL), $this->dadosValidos([
-            'Titulo'  => 'Título Atualizado',
-            'Edicao'  => 2,
+            'Titulo' => 'Título Atualizado',
+            'Edicao' => 2,
         ]));
 
         $this->assertDatabaseHas('livros', [
-            'CodL'   => $livro->CodL,
+            'CodL' => $livro->CodL,
             'Titulo' => 'Título Atualizado',
             'Edicao' => 2,
         ]);

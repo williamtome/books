@@ -29,9 +29,9 @@ class LivroTest extends TestCase
     public function test_retorna_os_tipos_de_dados_das_colunas_da_tabela_livros(): void
     {
         $this->assertEquals('int', Schema::getColumnType('livros', 'CodL'));
-        $this->assertEquals('varchar',  Schema::getColumnType('livros', 'Titulo'));
-        $this->assertEquals('varchar',  Schema::getColumnType('livros', 'Editora'));
+        $this->assertEquals('varchar', Schema::getColumnType('livros', 'Titulo'));
+        $this->assertEquals('varchar', Schema::getColumnType('livros', 'Editora'));
         $this->assertEquals('int', Schema::getColumnType('livros', 'Edicao'));
-        $this->assertEquals('varchar',  Schema::getColumnType('livros', 'AnoPublicacao'));
+        $this->assertEquals('varchar', Schema::getColumnType('livros', 'AnoPublicacao'));
     }
 }

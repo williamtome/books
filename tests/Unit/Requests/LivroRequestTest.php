@@ -14,23 +14,23 @@ class LivroRequestTest extends TestCase
     private function dadosValidos(array $sobrescrever = []): array
     {
         return array_merge([
-            'Titulo'        => 'Dom Casmurro',
-            'Editora'       => 'Editora Ática',
-            'Edicao'        => 1,
+            'Titulo' => 'Dom Casmurro',
+            'Editora' => 'Editora Ática',
+            'Edicao' => 1,
             'AnoPublicacao' => '2001',
         ], $sobrescrever);
     }
 
     private function validar(array $dados): \Illuminate\Validation\Validator
     {
-        $requisicao = new LivroRequest();
+        $requisicao = new LivroRequest;
 
         return Validator::make($dados, $requisicao->rules(), $requisicao->messages());
     }
 
     public function test_requisicao_esta_autorizada(): void
     {
-        $requisicao = new LivroRequest();
+        $requisicao = new LivroRequest;
 
         $this->assertTrue($requisicao->authorize());
     }
@@ -197,7 +197,7 @@ class LivroRequestTest extends TestCase
 
         $this->assertFalse($validador->passes());
         $this->assertEquals(
-            'O campo ano de publicação não pode ser maior que ' . date('Y') . '.',
+            'O campo ano de publicação não pode ser maior que '.date('Y').'.',
             $validador->errors()->first('AnoPublicacao')
         );
     }

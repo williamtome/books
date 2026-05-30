@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LivroRequest;
 use App\Models\Livro;
-use Illuminate\Http\Request;
 
 class LivroController extends Controller
 {
@@ -36,6 +35,7 @@ class LivroController extends Controller
     public function edit(string $id)
     {
         $livro = Livro::findOrFail($id);
+
         return view('livros.edicao', ['livro' => $livro]);
     }
 
@@ -43,6 +43,7 @@ class LivroController extends Controller
     {
         $livro = Livro::findOrFail($id);
         $livro->update($request->validated());
+
         return redirect()->route('livros.index')
             ->with('sucesso', 'Livro atualizado com sucesso!');
     }
@@ -51,6 +52,7 @@ class LivroController extends Controller
     {
         $livro = Livro::findOrFail($id);
         $livro->delete();
+
         return redirect()->route('livros.index');
     }
 }

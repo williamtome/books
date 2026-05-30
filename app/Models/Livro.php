@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Livro extends Model
 {
     protected $table = 'livros';
+
     protected $primaryKey = 'CodL';
+
     public $timestamps = false;
+
     protected $fillable = [
         'Titulo',
         'Editora',
         'Edicao',
-        'AnoPublicacao'
+        'AnoPublicacao',
     ];
 
     public function autores()
